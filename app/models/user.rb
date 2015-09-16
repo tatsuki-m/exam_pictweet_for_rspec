@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tweets
 
+  validates :nickname, presence: true
+
   def count_tweets
     tweets.count
   end
